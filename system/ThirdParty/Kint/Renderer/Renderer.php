@@ -30,9 +30,9 @@ use Kint\Object\InstanceObject;
 
 abstract class Renderer
 {
-    const SORT_NONE = 0;
-    const SORT_VISIBILITY = 1;
-    const SORT_FULL = 2;
+    public const SORT_NONE = 0;
+    public const SORT_VISIBILITY = 1;
+    public const SORT_FULL = 2;
 
     protected $call_info = array();
     protected $statics = array();

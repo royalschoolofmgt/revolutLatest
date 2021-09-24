@@ -1,56 +1,40 @@
-# CodeIgniter 4 Framework
+# BigCommerce Revolut Payment Gateway App
 
-## What is CodeIgniter?
+This plugin allows you to integrate payment solution with BigCommerce platform. This app was built using codeigniter framework.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+## App Installation
 
-This repository holds the distributable version of the framework,
-including the user guide. It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+To get the app running locally, follow these instructions:
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+1. Create a folder to hold your installation: mkdir revolut
+2. Copy the contents of the zip from git repo
+3. Specify Database details in `.env` file
+	- If using MySQL, enter your mysql database config keys (hostname, database, username/password) like below.
+	database.default.hostname = localhost
+	database.default.database = revolut
+	database.default.username = root
+	database.default.password = 
+	database.default.DBDriver = MySQLi
+	- If you want to change baseurl and project assets path change(app.baseURL , app.ASSETSPATH) in `.env` file.
+4. Run the command from the project root directory
+	- php spark migrate
+5. Your set up is ready.
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+Code is validated using [official coding standards of CodeIgniter](https://github.com/CodeIgniter/coding-standard)
 
+## BigCommerce Installation Instructions
 
-## Important Change with index.php
+To run this app you need to have bigcommerce account.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+1. Login to [Bigcommerce](https://login.bigcommerce.com/)
+2. Open [Bigcommerce Devtools](https://devtools.bigcommerce.com/my/apps)
+3. Create your App and add required details.
+4. Open [Bigcommerce Dashboard](https://login.bigcommerce.com/).
+5. Check Apps section in left panel.
+		- Apps
+			- MyApps
+				- My Draft Apps in center panel.
+6. Install the app.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Licensed to [247Commerce](https://www.247commerce.co.uk/PRODUCT-APP-LICENSE-POLICY-v1.6-Sept-2021.pdf)
 
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Contributing
-
-We welcome contributions from the community.
-
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
-
-## Server Requirements
-
-PHP version 7.3 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)

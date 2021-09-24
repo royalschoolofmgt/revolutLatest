@@ -438,13 +438,13 @@ class RichRenderer extends Renderer
         }
 
         if (isset($this->call_info['callee']['function']) && (
-                !empty($this->call_info['callee']['class']) ||
+            !empty($this->call_info['callee']['class']) ||
                 !\in_array(
                     $this->call_info['callee']['function'],
                     array('include', 'include_once', 'require', 'require_once'),
                     true
                 )
-            )
+        )
         ) {
             $output .= ' [';
             if (isset($this->call_info['callee']['class'])) {
